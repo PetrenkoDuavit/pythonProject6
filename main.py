@@ -5,26 +5,25 @@ import string
 ALL_LETTERS = string.ascii_letters
 SEPARATOR = "-"
 
-user_input = input("Enter letters in format: 'a-c' ").strip()
+user_input = input("Enter letters in format: 'a-c' ").strip()  # удаляю лишние пробелы из инпута
 
-if len(user_input) == 3:
+if len(user_input) == 3: # проверка размена строки
     first_letter = user_input[0]
     second_letter = user_input[2]
     separator = user_input[1]
 
-    if first_letter.isalpha() and second_letter.isalpha() and separator == SEPARATOR:
+    if first_letter.isalpha() and second_letter.isalpha() and separator == SEPARATOR: # проверка присутствия букв и раздилителя
         start_index = ALL_LETTERS.index(first_letter)
         end_index = ALL_LETTERS.index(second_letter)
 
-        if start_index > end_index:
+        if start_index > end_index: # если буквы написаны не по порядку меняю местами
             start_index, end_index = end_index, start_index
 
-        result = ALL_LETTERS[start_index:end_index + 1]
+        result = ALL_LETTERS[start_index:end_index + 1] # запись в результата в переменную
         print(result)
 
-
-
 # homeworck 6.2
+
 days = 0
 horas = 0
 minutes = 0
